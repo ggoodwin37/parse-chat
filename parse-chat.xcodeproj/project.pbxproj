@@ -13,6 +13,7 @@
 		F34769061BA0E875003A63AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F34769041BA0E875003A63AB /* Main.storyboard */; };
 		F34769081BA0E875003A63AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34769071BA0E875003A63AB /* Assets.xcassets */; };
 		F347690B1BA0E875003A63AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F34769091BA0E875003A63AB /* LaunchScreen.storyboard */; };
+		F3CDF4B91BA0EBB4008202EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CDF4B81BA0EBB4008202EE /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F347690A1BA0E875003A63AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F347690C1BA0E875003A63AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3CDF4B41BA0EA91008202EE /* parse-chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "parse-chat-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3CDF4B81BA0EBB4008202EE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		F34768FF1BA0E875003A63AB /* parse-chat */ = {
 			isa = PBXGroup;
 			children = (
+				F3CDF4B71BA0EB9D008202EE /* View Controllers */,
 				F34769001BA0E875003A63AB /* AppDelegate.swift */,
 				F34769021BA0E875003A63AB /* ViewController.swift */,
 				F34769041BA0E875003A63AB /* Main.storyboard */,
@@ -88,6 +91,14 @@
 				F3CDF4B41BA0EA91008202EE /* parse-chat-Bridging-Header.h */,
 			);
 			path = "parse-chat";
+			sourceTree = "<group>";
+		};
+		F3CDF4B71BA0EB9D008202EE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3CDF4B81BA0EBB4008202EE /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3CDF4B91BA0EBB4008202EE /* LoginViewController.swift in Sources */,
 				F34769031BA0E875003A63AB /* ViewController.swift in Sources */,
 				F34769011BA0E875003A63AB /* AppDelegate.swift in Sources */,
 			);

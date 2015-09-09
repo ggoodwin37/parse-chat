@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.text = "duffdevice@yahoo.com"
         // Do any additional setup after loading the view.
     }
 
@@ -26,22 +26,47 @@ class LoginViewController: UIViewController {
     @IBAction func onSignUp(sender: AnyObject) {
         let emailText = self.emailTextField.text
         let passwordText = self.passwordTextField.text
-        print("sign up with email \(emailText) and password \(passwordText)")
+        let pfUser = PFUser()
+        pfUser.username = emailText
+        pfUser.email = emailText
+        pfUser.password = passwordText
+        pfUser.signUpInBackgroundWithBlock{(succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo["error"] as? NSString
+                // TODO put this in UI
+                print("Error signing up: \(errorString)")
+            } else {
+                print("Signup successful")
+                self.onLoggedIn()
+            }
+        }
     }
 
     @IBAction func onSignIn(sender: AnyObject) {
-        let emailText = self.emailTextField.text
-        let passwordText = self.passwordTextField.text
-        print("sign IN with email \(emailText) and password \(passwordText)")
+        let emailText = self.emailTextField.text!
+        let passwordText = self.passwordTextField.text!
+
+        PFUser.logInWithUsernameInBackground(emailText, password:passwordText) { (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                print("Signin successful")
+                self.onLoggedIn()
+            } else {
+                let errorString = error!.userInfo["error"] as? NSString
+                print("Error signing up: \(errorString)")
+            }
+        }
     }
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
 
     @IBAction func onPasswordChanged(sender: AnyObject) {
-        view.endEditing(true)
+        // TODO: remove
     }
 
+    func onLoggedIn() {
+        // TODO: segue
+    }
     /*
     // MARK: - Navigation
 

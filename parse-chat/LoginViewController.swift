@@ -34,6 +34,13 @@ class LoginViewController: UIViewController {
         let passwordText = self.passwordTextField.text
         print("sign IN with email \(emailText) and password \(passwordText)")
     }
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+
+    @IBAction func onPasswordChanged(sender: AnyObject) {
+        view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

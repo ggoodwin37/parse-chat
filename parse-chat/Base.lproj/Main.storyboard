@@ -71,6 +71,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="t8k-gS-bsP" id="NyI-J9-2gT"/>
                         <outlet property="passwordTextField" destination="mNr-eT-CTG" id="T3o-13-D5N"/>
+                        <segue destination="MXB-xu-bdj" kind="show" identifier="ChatSegue" id="ZhE-EH-v3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,6 +82,25 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="348" y="509"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Jbr-bP-Quo">
+            <objects>
+                <viewController id="MXB-xu-bdj" customClass="ChatViewController" customModule="parse_chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qUg-Lc-jt6"/>
+                        <viewControllerLayoutGuide type="bottom" id="etx-CP-g9X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XC7-2k-cww">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.90132400895104881" blue="0.81085121393064286" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIL-w3-bAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="509"/>
         </scene>
     </scenes>
 </document>

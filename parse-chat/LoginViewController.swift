@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
     }
 
     func onLoggedIn(user:PFUser!) {
-        // TODO: segue
+        performSegueWithIdentifier("ChatSegue", sender: self)
     }
     /*
     // MARK: - Navigation

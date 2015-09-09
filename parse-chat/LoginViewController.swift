@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
                 print("Error signing up: \(errorString)")
             } else {
                 print("Signup successful")
-                self.onLoggedIn()
+                self.onLoggedIn(pfUser)
             }
         }
     }
@@ -49,22 +49,19 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(emailText, password:passwordText) { (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 print("Signin successful")
-                self.onLoggedIn()
+                self.onLoggedIn(user)
             } else {
                 let errorString = error!.userInfo["error"] as? NSString
                 print("Error signing up: \(errorString)")
             }
         }
     }
+
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
 
-    @IBAction func onPasswordChanged(sender: AnyObject) {
-        // TODO: remove
-    }
-
-    func onLoggedIn() {
+    func onLoggedIn(user:PFUser!) {
         // TODO: segue
     }
     /*

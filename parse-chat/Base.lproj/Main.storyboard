@@ -37,9 +37,6 @@
                                 <rect key="frame" x="32" y="223" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="onPasswordChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Dbj-ZE-FBI"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET UP IN DIS CHAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3m-Lf-QEH">
                                 <rect key="frame" x="40" y="45" width="240" height="30"/>

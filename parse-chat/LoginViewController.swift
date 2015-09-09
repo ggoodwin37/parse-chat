@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSignUp(sender: AnyObject) {
+        let emailText = self.emailTextField.text
+        let passwordText = self.passwordTextField.text
+        print("sign up with email \(emailText) and password \(passwordText)")
+    }
+
+    @IBAction func onSignIn(sender: AnyObject) {
+        let emailText = self.emailTextField.text
+        let passwordText = self.passwordTextField.text
+        print("sign IN with email \(emailText) and password \(passwordText)")
+    }
 
     /*
     // MARK: - Navigation

@@ -9,6 +9,8 @@
 import UIKit
 
 class ChatViewController: UIViewController {
+    @IBOutlet weak var messageTextField: UITextField!
+    var loggedInUser: PFUser? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,12 @@ class ChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPost(sender: AnyObject) {
+    }
 
+    internal func setUser(user:PFUser!) {
+        loggedInUser = user
+    }
     /*
     // MARK: - Navigation
 

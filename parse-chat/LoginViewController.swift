@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var loggedInUser: PFUser? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,16 +63,15 @@ class LoginViewController: UIViewController {
     }
 
     func onLoggedIn(user:PFUser!) {
+        loggedInUser = user
         performSegueWithIdentifier("ChatSegue", sender: self)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let chatVC = segue.destinationViewController as? ChatViewController
+        if (chatVC != nil) {
+            chatVC!.setUser(loggedInUser)
+        }
     }
-    */
 
 }

@@ -115,6 +115,10 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.90132400895104881" blue="0.81085121393064286" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zVc-Zf-2Ey" appends="YES" id="IN0-mk-Lut"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -122,25 +126,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIL-w3-bAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zVc-Zf-2Ey">
+                    <connections>
+                        <action selector="onTap:" destination="MXB-xu-bdj" id="wfb-Gk-WwX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="766" y="509"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aXt-42-jrk">
-            <objects>
-                <viewController id="v1b-bB-43G" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IVI-ye-azo"/>
-                        <viewControllerLayoutGuide type="bottom" id="weq-qY-sFA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gcx-JK-Y2y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OgN-Jy-3R1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>

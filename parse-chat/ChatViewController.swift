@@ -24,6 +24,20 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func onPost(sender: AnyObject) {
+        let messageText = messageTextField.text!
+        let messageObject = PFObject(className: "Message")
+        messageObject["text"] = messageText
+        messageObject.saveInBackgroundWithBlock{(succeeded: Bool, error: NSError?) -> Void in
+            if (succeeded) {
+                print("post success")
+            } else {
+                print("post failed")
+            }
+        }
+    }
+
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
     }
 
     internal func setUser(user:PFUser!) {

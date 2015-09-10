@@ -17,6 +17,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "onRefreshMessagesTimer", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,14 +55,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     internal func setUser(user:PFUser!) {
         loggedInUser = user
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func onRefreshMessagesTimer() {
     }
-    */
-
 }

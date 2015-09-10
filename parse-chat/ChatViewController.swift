@@ -12,6 +12,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var loggedInUser: PFUser? = nil
+    var messages = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +44,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return messages.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MessageTableViewCell", forIndexPath:indexPath) as! MessageTableViewCell
-        cell.messageLabel.text = "Fuck"
+        cell.messageLabel.text = messages[indexPath.row]
         return cell
     }
 
@@ -56,6 +57,27 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loggedInUser = user
     }
 
+    func loadMessages() {
+        let query = PFQuery(className:"Message")
+        query.limit = 20
+        query.orderByAscending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if (error == nil) {
+                if let objects = objects as? [PFObject] {
+                    self.messages = [String]()
+                    for object in objects {
+                        self.messages.append(object["text"] as! String)
+                    }
+                    self.tableView.reloadData()
+                }
+            } else {
+                let errorString = error!.userInfo["error"] as? NSString
+                print("Error loading messages: \(errorString)")
+            }
+        }
+    }
+    
     func onRefreshMessagesTimer() {
+        self.loadMessages()
     }
 }
